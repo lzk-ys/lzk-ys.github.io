@@ -911,7 +911,13 @@
       
         
           
-            
+            <p>参考文献：<br><a href="http://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener">http://www.runoob.com/linux/linux-vim.html</a></p>
+<p>基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。 这三种模式的作用分别是：</p>
+<p>在 Normal 模式下输入”/“可以进入查找模式，输入要查找的字符串并按回车，光标会跳转到第一个匹配的位置，按 n 查找下一个，按 N 查找上一个。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/target</span><br></pre></td></tr></table></figure></p>
+<p>在查找模式中加入\c表示大小写不敏感查找，\C表示大小写敏感查找，默认为大小写敏感查找<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/target\c</span><br></pre></td></tr></table></figure></p>
+<p>常用命令<br>:set nu  显示行号<br>:syntax on   语法高亮<br>:set ignorecase  查找忽略大小写<br>:set smartcase   </p>
+<p>dd 删除一行<br>ndd n为数字，表示要删除的行数，删除光标以下的n行。<br>p 复制一行<br>u 回退上一步，可回退多次</p>
+
           
         
       
