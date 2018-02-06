@@ -447,7 +447,22 @@
       
         
           
-            
+            <p>申请Root权限<br>adb root<br>adb remount</p>
+<p>安装apk方式：<br>adb push<br>adb install</p>
+<p>打印Log信息：<br>adb logcat</p>
+<p>截屏：<br>adb shell screencap</p>
+<p>Adb 实用命令<br><a href="https://juejin.im/entry/57f89f2d7db2a20059452457" target="_blank" rel="noopener">https://juejin.im/entry/57f89f2d7db2a20059452457</a></p>
+<p>显示当前设备中安装的所有应用包名：<br>adb shell pm list packages</p>
+<p>清理某个应用的用户数据<br>adb shell pm clear <packagename></packagename></p>
+<p>强杀进程<br>adb shell am force-stop <packagename><br>Android进程绝杀技–forceStop<br><a href="http://gityuan.com/2016/10/22/force-stop/" target="_blank" rel="noopener">http://gityuan.com/2016/10/22/force-stop/</a></packagename></p>
+<p>wifi连接adb</p>
+<p>#确保adb工作在Tcp/Ip模式<br>adb tcpip 5555       adb服务端口为5555，这是adb的默认端口。</p>
+<p>#pc端连接手机的IP<br>adb connect 设备IP</p>
+<p>adb,fastboot常用命令及刷机技巧<br><a href="https://blog.phpgao.com/adb.html" target="_blank" rel="noopener">https://blog.phpgao.com/adb.html</a></p>
+<p>命令行发送广播：<br>adb shell am broadcast -a com.okay.hosts.write</p>
+<p>adb install 命令<br>安装时候碰到的一个问题：已经签名的包，重新通过adb install 会提示安装错误。提示：Failure [INSTALL_FAILED_ALREADY_EXISTS]<br>为啥eclipse自己就可以不停滴覆盖重装呢？<br>因为eclipse自动打包是debug的签名，而我打如果是release签名就会出现上面的报错。解决办法：adb install -r<br>adb install -r 这里的r是reinstall 的缩写。顺便学习一下adb install的相关参数。<br>adb install -r  (reinstall) 重装<br>adb install -s (sdcard)  装在SD卡上而不是internal storage<br>adb uninstall -k (keep) 保留用户数据。<br><a href="https://segmentfault.com/a/1190000006887510" target="_blank" rel="noopener">https://segmentfault.com/a/1190000006887510</a></p>
+<p> dumpsys命令<br><a href="http://gityuan.com/2016/05/14/dumpsys-command/" target="_blank" rel="noopener">http://gityuan.com/2016/05/14/dumpsys-command/</a></p>
+
           
         
       
