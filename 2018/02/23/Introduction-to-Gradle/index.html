@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Gradle vs Maven comparisonmigrating from Maven to Gradle   Gradle GuidesBuilding Android Apps    Gradle Scriptsbuild.gradle (Project:)build.gradle (Module:app)gradle.propertiessettings.gradle (is used">
+<meta name="description" content="构建工具就是对你的项目进行编译、运行、签名、打包、依赖管理等一系列功能的合集，传统的构建工具有 Make、Ant、Maven、Ivy等，而 Gradle 是新一代的自动化构建工具 Gradle vs Maven comparisonmigrating from Maven to Gradle   Gradle GuidesBuilding Android Apps    Gradle Script">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Introduction to Gradle">
 <meta property="og:url" content="https://lzk-ys.github.io/2018/02/23/Introduction-to-Gradle/index.html">
 <meta property="og:site_name" content="Lucien">
-<meta property="og:description" content="Gradle vs Maven comparisonmigrating from Maven to Gradle   Gradle GuidesBuilding Android Apps    Gradle Scriptsbuild.gradle (Project:)build.gradle (Module:app)gradle.propertiessettings.gradle (is used">
+<meta property="og:description" content="构建工具就是对你的项目进行编译、运行、签名、打包、依赖管理等一系列功能的合集，传统的构建工具有 Make、Ant、Maven、Ivy等，而 Gradle 是新一代的自动化构建工具 Gradle vs Maven comparisonmigrating from Maven to Gradle   Gradle GuidesBuilding Android Apps    Gradle Script">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-02-24T07:19:58.000Z">
+<meta property="og:updated_time" content="2018-02-24T08:09:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Introduction to Gradle">
-<meta name="twitter:description" content="Gradle vs Maven comparisonmigrating from Maven to Gradle   Gradle GuidesBuilding Android Apps    Gradle Scriptsbuild.gradle (Project:)build.gradle (Module:app)gradle.propertiessettings.gradle (is used">
+<meta name="twitter:description" content="构建工具就是对你的项目进行编译、运行、签名、打包、依赖管理等一系列功能的合集，传统的构建工具有 Make、Ant、Maven、Ivy等，而 Gradle 是新一代的自动化构建工具 Gradle vs Maven comparisonmigrating from Maven to Gradle   Gradle GuidesBuilding Android Apps    Gradle Script">
 
 
 
@@ -185,7 +185,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -195,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -259,7 +259,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T17:58:55+08:00">
                 2018-02-23
@@ -310,7 +310,8 @@
       
 
       
-        <p><a href="https://gradle.org/maven-vs-gradle/?_ga=2.173464099.1492104015.1519438368-1380682816.1504689456" target="_blank" rel="noopener">Gradle vs Maven comparison</a><br><a href="https://guides.gradle.org/migrating-from-maven/?_ga=2.250564998.1492104015.1519438368-1380682816.1504689456" target="_blank" rel="noopener">migrating from Maven to Gradle</a>  </p>
+        <p>构建工具就是对你的项目进行编译、运行、签名、打包、依赖管理等一系列功能的合集，传统的构建工具有 Make、Ant、Maven、Ivy等，而 Gradle 是新一代的自动化构建工具</p>
+<p><a href="https://gradle.org/maven-vs-gradle/?_ga=2.173464099.1492104015.1519438368-1380682816.1504689456" target="_blank" rel="noopener">Gradle vs Maven comparison</a><br><a href="https://guides.gradle.org/migrating-from-maven/?_ga=2.250564998.1492104015.1519438368-1380682816.1504689456" target="_blank" rel="noopener">migrating from Maven to Gradle</a>  </p>
 <p>Gradle Guides<br><a href="https://guides.gradle.org/building-android-apps/?_ga=2.256349835.1492104015.1519438368-1380682816.1504689456" target="_blank" rel="noopener">Building Android Apps</a>   </p>
 <p>Gradle Scripts<br>build.gradle (Project:)<br>build.gradle (Module:app)<br>gradle.properties<br>settings.gradle (is used by Gradle to configure the multi-project build)<br>gradle-wrapper.properties</p>
 <p>当 Gralde 第一次构建项目时，Gradle Plugin 将要被下载并缓存，因此这个任务只执行一次。</p>
@@ -320,6 +321,20 @@
 <p>./gradlew assembleRelease 构建Release version<br>./gradlew installRelease</p>
 <p>参考资料：<br>从命令行构建您的应用<br><a href="https://developer.android.com/studio/build/building-cmdline.html?hl=zh-cn#DebugMode" target="_blank" rel="noopener">https://developer.android.com/studio/build/building-cmdline.html?hl=zh-cn#DebugMode</a></p>
 <p>签署您的应用<br><a href="https://developer.android.com/studio/publish/app-signing.html?hl=zh-cn" target="_blank" rel="noopener">https://developer.android.com/studio/publish/app-signing.html?hl=zh-cn</a></p>
+<p>lucien$ ./gradlew tasks<br>Incremental java compilation is an incubating feature.<br>:tasks</p>
+<hr>
+<h2 id="All-tasks-runnable-from-root-project"><a href="#All-tasks-runnable-from-root-project" class="headerlink" title="All tasks runnable from root project"></a>All tasks runnable from root project</h2><h2 id="Android-tasks"><a href="#Android-tasks" class="headerlink" title="Android tasks"></a>Android tasks</h2><p>androidDependencies - Displays the Android dependencies of the project.<br>signingReport - Displays the signing info for each variant.<br>sourceSets - Prints out all the source sets defined in this project.</p>
+<h2 id="Build-tasks"><a href="#Build-tasks" class="headerlink" title="Build tasks"></a>Build tasks</h2><p>assemble - Assembles all variants of all applications and secondary packages.<br>assembleAndroidTest - Assembles all the Test applications.<br>assembleDebug - Assembles all Debug builds.<br>assembleRelease - Assembles all Release builds.<br>build - Assembles and tests this project.<br>buildDependents - Assembles and tests this project and all projects that depend on it.<br>buildNeeded - Assembles and tests this project and all projects it depends on.<br>clean - Deletes the build directory.<br>compileDebugAndroidTestSources<br>compileDebugSources<br>compileDebugUnitTestSources<br>compileReleaseSources<br>compileReleaseUnitTestSources<br>extractDebugAnnotations - Extracts Android annotations for the debug variant into the archive file<br>extractReleaseAnnotations - Extracts Android annotations for the release variant into the archive file<br>mockableAndroidJar - Creates a version of android.jar that’s suitable for unit tests.</p>
+<h2 id="Build-Setup-tasks"><a href="#Build-Setup-tasks" class="headerlink" title="Build Setup tasks"></a>Build Setup tasks</h2><p>init - Initializes a new Gradle build. [incubating]<br>wrapper - Generates Gradle wrapper files. [incubating]</p>
+<h2 id="Help-tasks"><a href="#Help-tasks" class="headerlink" title="Help tasks"></a>Help tasks</h2><p>buildEnvironment - Displays all buildscript dependencies declared in root project ‘Launcher3’.<br>components - Displays the components produced by root project ‘Launcher3’. [incubating]<br>dependencies - Displays all dependencies declared in root project ‘Launcher3’.<br>dependencyInsight - Displays the insight into a specific dependency in root project ‘Launcher3’.<br>help - Displays a help message.<br>model - Displays the configuration model of root project ‘Launcher3’. [incubating]<br>projects - Displays the sub-projects of root project ‘Launcher3’.<br>properties - Displays the properties of root project ‘Launcher3’.<br>tasks - Displays the tasks runnable from root project ‘Launcher3’ (some of the displayed tasks may belong to subprojects).</p>
+<h2 id="Install-tasks"><a href="#Install-tasks" class="headerlink" title="Install tasks"></a>Install tasks</h2><p>installDebug - Installs the Debug build.<br>installDebugAndroidTest - Installs the android (on device) tests for the Debug build.<br>uninstallAll - Uninstall all applications.<br>uninstallDebug - Uninstalls the Debug build.<br>uninstallDebugAndroidTest - Uninstalls the android (on device) tests for the Debug build.<br>uninstallRelease - Uninstalls the Release build.</p>
+<h2 id="Verification-tasks"><a href="#Verification-tasks" class="headerlink" title="Verification tasks"></a>Verification tasks</h2><p>check - Runs all checks.<br>connectedAndroidTest - Installs and runs instrumentation tests for all flavors on connected devices.<br>connectedCheck - Runs all device checks on currently connected devices.<br>connectedDebugAndroidTest - Installs and runs the tests for debug on connected devices.<br>deviceAndroidTest - Installs and runs instrumentation tests using all Device Providers.<br>deviceCheck - Runs all device checks using Device Providers and Test Servers.<br>lint - Runs lint on all variants.<br>lintDebug - Runs lint on the Debug build.<br>lintRelease - Runs lint on the Release build.<br>test - Run unit tests for all variants.<br>testDebugUnitTest - Run unit tests for the debug build.<br>testReleaseUnitTest - Run unit tests for the release build.</p>
+<h2 id="Other-tasks"><a href="#Other-tasks" class="headerlink" title="Other tasks"></a>Other tasks</h2><p>assembleDefault<br>jarDebugClasses<br>jarReleaseClasses<br>transformResourcesWithMergeJavaResForDebugUnitTest<br>transformResourcesWithMergeJavaResForReleaseUnitTest</p>
+<p>To see all tasks and more detail, run gradlew tasks –all</p>
+<p>To see more detail about a task, run gradlew help –task <task></task></p>
+<p>BUILD SUCCESSFUL</p>
+<p>Total time: 17.164 secs</p>
+<p>This build could be faster, please consider using the Gradle Daemon: <a href="https://docs.gradle.org/2.10/userguide/gradle_daemon.html" target="_blank" rel="noopener">https://docs.gradle.org/2.10/userguide/gradle_daemon.html</a></p>
 
       
     </div>
@@ -410,10 +425,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -434,7 +449,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -470,7 +485,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Review-the-build-file-in-the-app-module"><span class="nav-number">1.</span> <span class="nav-text">Review the build file in the app module</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Review-the-build-file-in-the-app-module"><span class="nav-number">1.</span> <span class="nav-text">Review the build file in the app module</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#All-tasks-runnable-from-root-project"><span class="nav-number"></span> <span class="nav-text">All tasks runnable from root project</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-tasks"><span class="nav-number"></span> <span class="nav-text">Android tasks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-tasks"><span class="nav-number"></span> <span class="nav-text">Build tasks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-Setup-tasks"><span class="nav-number"></span> <span class="nav-text">Build Setup tasks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Help-tasks"><span class="nav-number"></span> <span class="nav-text">Help tasks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-tasks"><span class="nav-number"></span> <span class="nav-text">Install tasks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Verification-tasks"><span class="nav-number"></span> <span class="nav-text">Verification tasks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-tasks"><span class="nav-number"></span> <span class="nav-text">Other tasks</span></a></div>
             
 
           </div>
@@ -500,7 +515,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
