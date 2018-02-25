@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lucien">
-<meta property="og:url" content="https://lzk-ys.github.io/archives/2018/index.html">
+<meta name="description" content="内存泄漏的危害1、 引起OutOfMemoryError2、 内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序 场景：1、类的静态变量持有大数据对象静态变量长期维持到大数据对象的引用，阻止垃圾回收。 2、非静态内部类的静态实例非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 内存泄漏分析">
+<meta property="og:url" content="https://lzk-ys.github.io/2018/02/24/Android-内存泄漏分析/index.html">
 <meta property="og:site_name" content="Lucien">
+<meta property="og:description" content="内存泄漏的危害1、 引起OutOfMemoryError2、 内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序 场景：1、类的静态变量持有大数据对象静态变量长期维持到大数据对象的引用，阻止垃圾回收。 2、非静态内部类的静态实例非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2018-02-24T09:44:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lucien">
+<meta name="twitter:title" content="Android 内存泄漏分析">
+<meta name="twitter:description" content="内存泄漏的危害1、 引起OutOfMemoryError2、 内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序 场景：1、类的静态变量持有大数据对象静态变量长期维持到大数据对象的引用，阻止垃圾回收。 2、非静态内部类的静态实例非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://lzk-ys.github.io/archives/2018/"/>
+  <link rel="canonical" href="https://lzk-ys.github.io/2018/02/24/Android-内存泄漏分析/"/>
 
 
 
 
 
-  <title>Archiv | Lucien</title>
+  <title>Android 内存泄漏分析 | Lucien</title>
   
 
 
@@ -140,7 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,411 +218,168 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lzk-ys.github.io/2018/02/24/Android-内存泄漏分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lucien Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lucien">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Android 内存泄漏分析</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-24T17:42:55+08:00">
+                2018-02-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Öhm..! Insgesamt 12 Artikel. Bleib dran.
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
+             <span id="/2018/02/24/Android-内存泄漏分析/" class="leancloud_visitors" data-flag-title="Android 内存泄漏分析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/25/Android-存储访问框架/" itemprop="url">
-              
-                <span itemprop="name">Android 存储访问框架</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-25T11:12:38+08:00"
-              content="2018-02-25" >
-          02-25
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/24/Intro-to-Shell/" itemprop="url">
-              
-                <span itemprop="name">Intro to Shell</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-24T17:51:57+08:00"
-              content="2018-02-24" >
-          02-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/24/Android-内存泄漏分析/" itemprop="url">
-              
-                <span itemprop="name">Android 内存泄漏分析</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-24T17:42:55+08:00"
-              content="2018-02-24" >
-          02-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>内存泄漏的危害<br>1、 引起OutOfMemoryError<br>2、 内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度<br>3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序</p>
+<p>场景：<br>1、<br>类的静态变量持有大数据对象<br>静态变量长期维持到大数据对象的引用，阻止垃圾回收。</p>
+<p>2、<br>非静态内部类的静态实例<br>非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持着外部类的引用，阻止被回收掉。</p>
+<p>非静态内部类和匿名内部类会持有外部类的引用，而静态内部类不会。</p>
+<p>参考文章：<br><a href="http://www.androiddesignpatterns.com/2013/01/inner-class-handler-memory-leak.html" target="_blank" rel="noopener">http://www.androiddesignpatterns.com/2013/01/inner-class-handler-memory-leak.html</a></p>
+<p>3、<br>资源类的对象未关闭<br>资源性对象如 Cursor、Stream、Socket，应该在使用后及时关闭。未在 finally 中关闭，会导致异常情况下资源对象未被释放的隐患。<br>对于使用了BraodcastReceiver，ContentObserver，File，Cursor，Stream，Bitmap等资源的使用，应该在Activity销毁时及时关闭或者注销，否则这些资源将不会被回收，造成内存泄漏。</p>
+<p>4、<br>注册对象未反注册<br>未反注册会导致观察者列表里维持着对象的引用，阻止垃圾回收。<br>例如：BroadcastReceiver，EventBus等。</p>
+<p>5、<br>Handler临时性内存泄露<br>Handler 通过发送 Message 与主线程交互，Message 发出之后是存储在 MessageQueue 中的，有些 Message 也不是马上就被处理的。在 Message 中存在一个 target，是 Handler 的一个引用，如果 Message 在 Queue 中存在的时间越长，就会导致 Handler 无法被回收。如果 Handler 是非静态的，则会导致 Activity 或者 Service 不会被回收。<br>由于 AsyncTask 内部也是 Handler 机制，同样存在内存泄漏的风险。<br>解决方案：</p>
+<p>6、<br>Thread、AsyncTask、Timer引起内存泄露<br>Activity在onDestroy()中处理，View在onDetachedFromWindow()中处理</p>
+<p>7、<br>WebView内存泄露</p>
+<p>预防：<br>不要维持到 Activity 的长久引用，对 activity 的引用应该和 activity 本身有相同的生命周期。<br>尽量使用context-application代替context-activity<br>Activity 中尽量不要使用非静态内部类，可以使用静态内部类和WeakReference代替。</p>
+<p>检测：<br>静态检测<br>　　静态检测主要是检测资源未关闭的情况，Eclipse 和 Android Studio 都可以检测出 IO 或者 Socket 未关闭的情况，然后在 finally 中关闭即可。<br>动态监测<br>　　动态检测主要是依靠 MAT(Memory Analysis Tools) 这个工具。目前主流：LeakCanary<br>具体：<a href="http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&amp;mid=401667209&amp;idx=2&amp;sn=f1a085f8838e59de55927d71260ec83c&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&amp;mid=401667209&amp;idx=2&amp;sn=f1a085f8838e59de55927d71260ec83c&amp;scene=21#wechat_redirect</a></p>
+<p>参考资料：<br>Android内存泄漏研究<br><a href="http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&amp;mid=2649547478&amp;idx=1&amp;sn=fec54d62785a6f666ef9c49646871ba9&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&amp;mid=2649547478&amp;idx=1&amp;sn=fec54d62785a6f666ef9c49646871ba9&amp;scene=21#wechat_redirect</a></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/24/Kotlin-Language-Learning/" itemprop="url">
-              
-                <span itemprop="name">Kotlin Language Learning</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-24T10:35:20+08:00"
-              content="2018-02-24" >
-          02-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/23/Hexo-NexT-Settings/" itemprop="url">
-              
-                <span itemprop="name">Hexo NexT Settings</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-23T18:01:27+08:00"
-              content="2018-02-23" >
-          02-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/23/Intro-to-Gradle/" itemprop="url">
-              
-                <span itemprop="name">Introduction to Gradle</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-23T17:58:55+08:00"
-              content="2018-02-23" >
-          02-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/31/Android-adb-command/" itemprop="url">
-              
-                <span itemprop="name">Android adb command</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-31T23:27:18+08:00"
-              content="2018-01-31" >
-          01-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/31/Git-command/" itemprop="url">
-              
-                <span itemprop="name">Git command</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-31T23:27:00+08:00"
-              content="2018-01-31" >
-          01-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/31/Linux-zip-and-tar-command/" itemprop="url">
-              
-                <span itemprop="name">Linux zip and tar command</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-31T23:23:49+08:00"
-              content="2018-01-31" >
-          01-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/31/Linux-vim/" itemprop="url">
-              
-                <span itemprop="name">Linux vim</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-31T23:23:05+08:00"
-              content="2018-01-31" >
-          01-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/24/Kotlin-Language-Learning/" rel="next" title="Kotlin Language Learning">
+                <i class="fa fa-chevron-left"></i> Kotlin Language Learning
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/24/Intro-to-Shell/" rel="prev" title="Intro to Shell">
+                Intro to Shell <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -626,6 +387,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -822,6 +587,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
