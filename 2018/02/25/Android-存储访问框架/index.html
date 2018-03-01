@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="参考文献：Create a Custom Document Provider Android 4.4（API 级别 19）引入了存储访问框架 (SAF)。SAF 让用户能够在其所有首选文档存储提供程序中方便地浏览并打开文档、图像以及其他文件。 用户可以通过易用的标准 UI，以统一方式在所有应用和提供程序中浏览文件和访问最近使用的文件。 云存储服务或本地存储服务可以通过实现封装其服务的 Docume">
+<meta name="description" content="参考文献：Create a Custom Document ProviderDocumentsProvider   Android 4.4（API 级别 19）引入了存储访问框架 (SAF)。SAF 让用户能够在其所有首选文档存储提供程序中方便地浏览并打开文档、图像以及其他文件。 用户可以通过易用的标准 UI，以统一方式在所有应用和提供程序中浏览文件和访问最近使用的文件。 云存储服务或本地存储服务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 存储访问框架">
 <meta property="og:url" content="https://lzk-ys.github.io/2018/02/25/Android-存储访问框架/index.html">
 <meta property="og:site_name" content="Lucien">
-<meta property="og:description" content="参考文献：Create a Custom Document Provider Android 4.4（API 级别 19）引入了存储访问框架 (SAF)。SAF 让用户能够在其所有首选文档存储提供程序中方便地浏览并打开文档、图像以及其他文件。 用户可以通过易用的标准 UI，以统一方式在所有应用和提供程序中浏览文件和访问最近使用的文件。 云存储服务或本地存储服务可以通过实现封装其服务的 Docume">
+<meta property="og:description" content="参考文献：Create a Custom Document ProviderDocumentsProvider   Android 4.4（API 级别 19）引入了存储访问框架 (SAF)。SAF 让用户能够在其所有首选文档存储提供程序中方便地浏览并打开文档、图像以及其他文件。 用户可以通过易用的标准 UI，以统一方式在所有应用和提供程序中浏览文件和访问最近使用的文件。 云存储服务或本地存储服务">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="https://developer.android.google.cn/images/providers/storage_datamodel.png">
-<meta property="og:updated_time" content="2018-02-25T08:03:06.000Z">
+<meta property="og:updated_time" content="2018-02-26T07:37:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 存储访问框架">
-<meta name="twitter:description" content="参考文献：Create a Custom Document Provider Android 4.4（API 级别 19）引入了存储访问框架 (SAF)。SAF 让用户能够在其所有首选文档存储提供程序中方便地浏览并打开文档、图像以及其他文件。 用户可以通过易用的标准 UI，以统一方式在所有应用和提供程序中浏览文件和访问最近使用的文件。 云存储服务或本地存储服务可以通过实现封装其服务的 Docume">
+<meta name="twitter:description" content="参考文献：Create a Custom Document ProviderDocumentsProvider   Android 4.4（API 级别 19）引入了存储访问框架 (SAF)。SAF 让用户能够在其所有首选文档存储提供程序中方便地浏览并打开文档、图像以及其他文件。 用户可以通过易用的标准 UI，以统一方式在所有应用和提供程序中浏览文件和访问最近使用的文件。 云存储服务或本地存储服务">
 <meta name="twitter:image" content="https://developer.android.google.cn/images/providers/storage_datamodel.png">
 
 
@@ -187,7 +187,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -261,7 +261,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-25T11:12:38+08:00">
                 2018-02-25
@@ -312,7 +312,7 @@
       
 
       
-        <p>参考文献：<br><a href="https://developer.android.google.cn/guide/topics/providers/create-document-provider.html" target="_blank" rel="noopener">Create a Custom Document Provider</a></p>
+        <p>参考文献：<br><a href="https://developer.android.google.cn/guide/topics/providers/create-document-provider.html" target="_blank" rel="noopener">Create a Custom Document Provider</a><br><a href="https://developer.android.google.cn/reference/android/provider/DocumentsProvider.html" target="_blank" rel="noopener">DocumentsProvider</a>  </p>
 <p>Android 4.4（API 级别 19）引入了存储访问框架 (SAF)。SAF 让用户能够在其所有首选文档存储提供程序中方便地浏览并打开文档、图像以及其他文件。 用户可以通过易用的标准 UI，以统一方式在所有应用和提供程序中浏览文件和访问最近使用的文件。</p>
 <p>云存储服务或本地存储服务可以通过实现封装其服务的 DocumentsProvider 参与此生态系统。只需几行代码，便可将需要访问提供程序文档的客户端应用与 SAF 集成。</p>
 <p>支持多个用户帐户和临时根目录，如只有在插入驱动器后才会出现的 USB 存储提供程序。</p>
@@ -408,10 +408,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -432,7 +432,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">14</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -498,7 +498,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="当对 ArrayList 进行遍历时，不要在循环体中直接调用实例的 remove 方法，否则会抛出 java.util.ConcurrentModificationException 异常。正确操作：通过迭代器进行遍历，并通过迭代器进行 remove 操作。">
+<meta name="description" content="当对 ArrayList 进行遍历时，不要在循环体中直接调用实例的 remove 方法，否则会抛出 java.util.ConcurrentModificationException 异常。正确操作：通过迭代器进行遍历，并通过迭代器进行 remove 操作。   通过对象锁，CountDownLatch 进行同步private final Object mLock = new Object();p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 技术细节">
 <meta property="og:url" content="https://lzk-ys.github.io/2018/02/25/Java-技术细节/index.html">
 <meta property="og:site_name" content="Lucien">
-<meta property="og:description" content="当对 ArrayList 进行遍历时，不要在循环体中直接调用实例的 remove 方法，否则会抛出 java.util.ConcurrentModificationException 异常。正确操作：通过迭代器进行遍历，并通过迭代器进行 remove 操作。">
+<meta property="og:description" content="当对 ArrayList 进行遍历时，不要在循环体中直接调用实例的 remove 方法，否则会抛出 java.util.ConcurrentModificationException 异常。正确操作：通过迭代器进行遍历，并通过迭代器进行 remove 操作。   通过对象锁，CountDownLatch 进行同步private final Object mLock = new Object();p">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-02-25T09:50:04.000Z">
+<meta property="og:updated_time" content="2018-03-01T07:31:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 技术细节">
-<meta name="twitter:description" content="当对 ArrayList 进行遍历时，不要在循环体中直接调用实例的 remove 方法，否则会抛出 java.util.ConcurrentModificationException 异常。正确操作：通过迭代器进行遍历，并通过迭代器进行 remove 操作。">
+<meta name="twitter:description" content="当对 ArrayList 进行遍历时，不要在循环体中直接调用实例的 remove 方法，否则会抛出 java.util.ConcurrentModificationException 异常。正确操作：通过迭代器进行遍历，并通过迭代器进行 remove 操作。   通过对象锁，CountDownLatch 进行同步private final Object mLock = new Object();p">
 
 
 
@@ -185,7 +185,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -195,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -259,7 +259,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-25T17:08:21+08:00">
                 2018-02-25
@@ -311,6 +311,10 @@
 
       
         <p>当对 ArrayList 进行遍历时，不要在循环体中直接调用实例的 remove 方法，否则会抛出 java.util.ConcurrentModificationException 异常。<br>正确操作：通过迭代器进行遍历，并通过迭代器进行 remove 操作。  </p>
+<h4 id="通过对象锁，CountDownLatch-进行同步"><a href="#通过对象锁，CountDownLatch-进行同步" class="headerlink" title="通过对象锁，CountDownLatch 进行同步"></a>通过对象锁，CountDownLatch 进行同步</h4><p>private final Object mLock = new Object();<br>private final CountDownLatch mFirstLoad = new CountDownLatch(1);<br>详细说明：</p>
+<h4 id="比较两个字符串是否相等"><a href="#比较两个字符串是否相等" class="headerlink" title="比较两个字符串是否相等"></a>比较两个字符串是否相等</h4><p>Objects.equals(authority, other.authority);<br>不再需要再判断 authority.equals(other.authority) 之前先判断 authority 是否为 null, 避免NullPointerException</p>
+<h4 id="Override-equals"><a href="#Override-equals" class="headerlink" title="Override equals"></a>Override equals</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public boolean equals(Object o) &#123;</span><br><span class="line">        if (o == null) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if (this == o) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if (o instanceof RootInfo) &#123;</span><br><span class="line">            RootInfo other = (RootInfo) o;</span><br><span class="line">            return Objects.equals(authority, other.authority)</span><br><span class="line">                    &amp;&amp; Objects.equals(rootId, other.rootId);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Override-compareTo-T-t-implements-Comparable"><a href="#Override-compareTo-T-t-implements-Comparable" class="headerlink" title="Override compareTo(T t), implements Comparable"></a>Override compareTo(T t), implements Comparable<t></t></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public int compareTo(RootInfo other) &#123;</span><br><span class="line">        // Sort by root type, then title, then summary.</span><br><span class="line">        int score = derivedType - other.derivedType;</span><br><span class="line">        if (score != 0) &#123;</span><br><span class="line">            return score;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        score = compareToIgnoreCaseNullable(title, other.title);</span><br><span class="line">        if (score != 0) &#123;</span><br><span class="line">            return score;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return compareToIgnoreCaseNullable(summary, other.summary);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -399,8 +403,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -416,7 +429,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">14</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -443,6 +456,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#通过对象锁，CountDownLatch-进行同步"><span class="nav-number">1.</span> <span class="nav-text">通过对象锁，CountDownLatch 进行同步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较两个字符串是否相等"><span class="nav-number">2.</span> <span class="nav-text">比较两个字符串是否相等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Override-equals"><span class="nav-number">3.</span> <span class="nav-text">Override equals</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Override-compareTo-T-t-implements-Comparable"><span class="nav-number">4.</span> <span class="nav-text">Override compareTo(T t), implements Comparable</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -466,7 +495,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
