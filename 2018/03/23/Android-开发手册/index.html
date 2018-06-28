@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="find 用来查找文件或者目录grep 用来查找所有匹配正则表达式的地方，grep 要比 find 查找的粒度更细。 find 命令find [-H] [-L] [-P] [-D debugopts] [-Olevel] [path…] [expression]   -name 根据文件名查找find path -name “filename”   -mtime 根据文件修改时间查找find pa">
+<meta name="description" content="原则：掌握开发规范更要掌握背后的原理 参考文献：阿里巴巴 Android 开发手册博客：https://zmywly8866.github.io/2014/12/26/android-do-not-store-data-in-the-application-object.html 不要在Android的Application对象中缓存数据! 转载Note:不仅仅只有Application对象是这样">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux find and grep command">
-<meta property="og:url" content="https://lzk-ys.github.io/2018/01/31/Linux-find-and-grep-command/index.html">
+<meta property="og:title" content="Android 开发手册">
+<meta property="og:url" content="https://lzk-ys.github.io/2018/03/23/Android-开发手册/index.html">
 <meta property="og:site_name" content="Lucien">
-<meta property="og:description" content="find 用来查找文件或者目录grep 用来查找所有匹配正则表达式的地方，grep 要比 find 查找的粒度更细。 find 命令find [-H] [-L] [-P] [-D debugopts] [-Olevel] [path…] [expression]   -name 根据文件名查找find path -name “filename”   -mtime 根据文件修改时间查找find pa">
+<meta property="og:description" content="原则：掌握开发规范更要掌握背后的原理 参考文献：阿里巴巴 Android 开发手册博客：https://zmywly8866.github.io/2014/12/26/android-do-not-store-data-in-the-application-object.html 不要在Android的Application对象中缓存数据! 转载Note:不仅仅只有Application对象是这样">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-02-26T07:37:20.000Z">
+<meta property="og:updated_time" content="2018-03-27T15:05:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux find and grep command">
-<meta name="twitter:description" content="find 用来查找文件或者目录grep 用来查找所有匹配正则表达式的地方，grep 要比 find 查找的粒度更细。 find 命令find [-H] [-L] [-P] [-D debugopts] [-Olevel] [path…] [expression]   -name 根据文件名查找find path -name “filename”   -mtime 根据文件修改时间查找find pa">
+<meta name="twitter:title" content="Android 开发手册">
+<meta name="twitter:description" content="原则：掌握开发规范更要掌握背后的原理 参考文献：阿里巴巴 Android 开发手册博客：https://zmywly8866.github.io/2014/12/26/android-do-not-store-data-in-the-application-object.html 不要在Android的Application对象中缓存数据! 转载Note:不仅仅只有Application对象是这样">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://lzk-ys.github.io/2018/01/31/Linux-find-and-grep-command/"/>
+  <link rel="canonical" href="https://lzk-ys.github.io/2018/03/23/Android-开发手册/"/>
 
 
 
 
 
-  <title>Linux find and grep command | Lucien</title>
+  <title>Android 开发手册 | Lucien</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lzk-ys.github.io/2018/01/31/Linux-find-and-grep-command/">
+    <link itemprop="mainEntityOfPage" href="https://lzk-ys.github.io/2018/03/23/Android-开发手册/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lucien Liu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux find and grep command</h1>
+          <h1 class="post-title" itemprop="name headline">Android 开发手册</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-31T17:49:46+08:00">
-                2018-01-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T09:52:58+08:00">
+                2018-03-23
               </time>
             
 
@@ -279,7 +279,7 @@
 
           
           
-             <span id="/2018/01/31/Linux-find-and-grep-command/" class="leancloud_visitors" data-flag-title="Linux find and grep command">
+             <span id="/2018/03/23/Android-开发手册/" class="leancloud_visitors" data-flag-title="Android 开发手册">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -310,17 +310,27 @@
       
 
       
-        <p>find 用来查找文件或者目录<br>grep 用来查找所有匹配正则表达式的地方，grep 要比 find 查找的粒度更细。</p>
-<h3 id="find-命令"><a href="#find-命令" class="headerlink" title="find 命令"></a>find 命令</h3><p>find [-H] [-L] [-P] [-D debugopts] [-Olevel] [path…] [expression]  </p>
-<h5 id="name-根据文件名查找"><a href="#name-根据文件名查找" class="headerlink" title="-name 根据文件名查找"></a>-name 根据文件名查找</h5><p>find path -name “filename”  </p>
-<h5 id="mtime-根据文件修改时间查找"><a href="#mtime-根据文件修改时间查找" class="headerlink" title="-mtime 根据文件修改时间查找"></a>-mtime 根据文件修改时间查找</h5><p>find path -mtime -n/+n  </p>
-<h5 id="type-根据文件类型查找"><a href="#type-根据文件类型查找" class="headerlink" title="-type 根据文件类型查找"></a>-type 根据文件类型查找</h5><p>find path -type []</p>
-<h5 id="size-根据文件大小查找"><a href="#size-根据文件大小查找" class="headerlink" title="-size 根据文件大小查找"></a>-size 根据文件大小查找</h5><p>find path -size  </p>
-<h5 id="perm-根据文件访问权限查找"><a href="#perm-根据文件访问权限查找" class="headerlink" title="-perm 根据文件访问权限查找"></a>-perm 根据文件访问权限查找</h5><h5 id="user-根据文件属主查找"><a href="#user-根据文件属主查找" class="headerlink" title="-user 根据文件属主查找"></a>-user 根据文件属主查找</h5><h5 id="group-根据文件所属的组查找"><a href="#group-根据文件所属的组查找" class="headerlink" title="-group 根据文件所属的组查找"></a>-group 根据文件所属的组查找</h5><p>-exec 和 xargs 用于对所匹配到的文件执行其他命令。</p>
-<h3 id="grep-命令"><a href="#grep-命令" class="headerlink" title="grep 命令"></a>grep 命令</h3><p>grep -rn “string” path</p>
-<p>-n, –line-number<br>Each output line is preceded by its relative line number in the file, starting at line 1.  The line number counter is reset for each file processed.  This option is ignored if -c, -L, -l, or -q is specified.</p>
-<p>-R, -r, –recursive<br>Recursively search subdirectories listed.</p>
-<p>-v, –invert-match<br>Selected lines are those not matching any of the specified patterns.</p>
+        <p>原则：掌握开发规范更要掌握背后的原理</p>
+<p>参考文献：<br>阿里巴巴 Android 开发手册<br>博客：<br><a href="https://zmywly8866.github.io/2014/12/26/android-do-not-store-data-in-the-application-object.html" target="_blank" rel="noopener">https://zmywly8866.github.io/2014/12/26/android-do-not-store-data-in-the-application-object.html</a></p>
+<p><a href="https://zmywly8866.github.io/2014/12/26/android-do-not-store-data-in-the-application-object.html" target="_blank" rel="noopener">不要在Android的Application对象中缓存数据! 转载</a><br>Note:不仅仅只有Application对象是这样的，其它的单例或者公有静态类也有可能会由于系统内存而被杀掉，谨记。</p>
+<p>[强制] Application 中，确保只在自己需要的进程初始化<br>[详细参考](<a href="https://blog.csdn.net/wx_jin/article/details/50894058" target="_blank" rel="noopener">https://blog.csdn.net/wx_jin/article/details/50894058</a></p>
+<p>[强制] 新建线程时，必须通过线程池提供（AsyncTask 或者 ThreadPoolExecutor 或者其他形式自定义的线程池），不允许在应用中自行显示的创建线程。<br>参考：阿里 Android 开发手册</p>
+<p>[强制] 线程池不允许使用 Executors 创建， 而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险。<br>说明：<br>Executors 返回的线程池对象的弊端如下：</p>
+<ol>
+<li>FixedThreadPool 和 SingleThreadPool ： 允许的请求队列长度为Integer.MAX_VALUE, 可能会堆积大量的请求，从而导致OOM（why?）</li>
+<li>CachedThreadPool 和 ScheduledThreadPool ：允许的创建线程数量为Integer.MAX_VALUE，可能会创建大量的线程，从而导致OOM。<br>参考：阿里 Android 开发手册</li>
+</ol>
+<p>[推荐] ThreadPoolExecutor 设置线程存活时间(setKeepAliveTime)，确保空闲时线程能被释放。<br>说明：<br>不设置 setKeepAliveTime 时，默认是什么？</p>
+<p>疑惑：<br>Android 开发中，如何更方便地使用线程，因为开发中会在很多地方处理网络请求，尤其是IO操作，如何更便捷地处理？<br>例如：数据库，文件，读取Bitmap</p>
+<p>文件与数据库<br>[强制] 应用间共享文件时，不要通过放宽文件系统权限的方式去实现，而是应该使用FileProvider。<br>参考：阿里 Android 开发手册</p>
+<p>[强制] 多线程操作写入数据库时，需要使用事务，以免出现同步问题。<br>单个 App 中应使用 SQLiteOpenHelper 的单例模式确保数据库连接唯一。<br>参考：阿里 Android 开发手册</p>
+<p>Bitmap、Drawable 与动画<br>[强制] 加载大图片或者一次性加载多张图片，应该在异步线程中进行。图片的加载，涉及到 IO 操作，以及 CPU 密集操作，很可能引起卡顿。</p>
+<p>[强制] png 图片使用 tinypng 或者类似工具压缩处理，减少包体积。</p>
+<p>[推荐] 根据实际展示需要，压缩图片，而不是直接显示原图。</p>
+<p>[强制] 使用完毕的图片，应该及时回收，释放宝贵的内存。</p>
+<p>[强制] 在 Activity.onPause() 或 Activity.onStop() 回调中，关闭当前 activity 正在执行的动画。否则会导致 UI 线程延迟。</p>
+<p>[推荐] 使用 BitmapFactory.Options.inBitmap 重复利用内存空间，避免重复开辟新内存。</p>
+<p>[推荐] 使用 RGB_565 代替 ARGB_8888，在不怎么影响视觉效果的前提下，减少内存占用。<br>Note: RGB_565 不支持图片本身的透明度。</p>
 
       
     </div>
@@ -345,8 +355,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/25/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/02/25/Android-技术细节/" rel="next" title="Android 技术细节">
+                <i class="fa fa-chevron-left"></i> Android 技术细节
               </a>
             
           </div>
@@ -354,10 +364,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/31/Linux-vim/" rel="prev" title="Linux vim">
-                Linux vim <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -409,17 +415,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -461,22 +458,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#find-命令"><span class="nav-number">1.</span> <span class="nav-text">find 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#name-根据文件名查找"><span class="nav-number">1.0.1.</span> <span class="nav-text">-name 根据文件名查找</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mtime-根据文件修改时间查找"><span class="nav-number">1.0.2.</span> <span class="nav-text">-mtime 根据文件修改时间查找</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#type-根据文件类型查找"><span class="nav-number">1.0.3.</span> <span class="nav-text">-type 根据文件类型查找</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#size-根据文件大小查找"><span class="nav-number">1.0.4.</span> <span class="nav-text">-size 根据文件大小查找</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#perm-根据文件访问权限查找"><span class="nav-number">1.0.5.</span> <span class="nav-text">-perm 根据文件访问权限查找</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#user-根据文件属主查找"><span class="nav-number">1.0.6.</span> <span class="nav-text">-user 根据文件属主查找</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#group-根据文件所属的组查找"><span class="nav-number">1.0.7.</span> <span class="nav-text">-group 根据文件所属的组查找</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-命令"><span class="nav-number">2.</span> <span class="nav-text">grep 命令</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Lucien">
 <meta property="og:description" content="Android中代替枚举的@IntDef用法123456789101112@IntDef(flag = true, value = &amp;#123;      OPERATION_UNKNOWN,    OPERATION_COPY,    OPERATION_MOVE,    OPERATION_DELETE    &amp;#125;)@Retention(RetentionPolicy.SOURCE)p">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-02-26T07:37:03.000Z">
+<meta property="og:updated_time" content="2018-06-08T09:37:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 技术细节">
 <meta name="twitter:description" content="Android中代替枚举的@IntDef用法123456789101112@IntDef(flag = true, value = &amp;#123;      OPERATION_UNKNOWN,    OPERATION_COPY,    OPERATION_MOVE,    OPERATION_DELETE    &amp;#125;)@Retention(RetentionPolicy.SOURCE)p">
@@ -185,7 +185,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -195,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -259,7 +259,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-25T17:08:35+08:00">
                 2018-02-25
@@ -328,6 +328,24 @@
 <p>在同一个 Android 设备中，两个 App 的 packageName 不能相同，两个 App 中定义的 ContentProvider 的 authorities 也不能相同。</p>
 <p>android:descendantFocusability=”blocksDescendants” 避免Item中的控件抢焦点</p>
 </blockquote>
+<h3 id="waiting-for-research"><a href="#waiting-for-research" class="headerlink" title="waiting for research"></a>waiting for research</h3><p><a href="http://www.flysnow.org/2015/08/13/android-tech-docs-support-annotations.html" target="_blank" rel="noopener">Android注解支持</a><br><a href="https://developer.android.com/studio/write/annotations.html?hl=zh-cn" target="_blank" rel="noopener">使用注解改进代码检查</a></p>
+<p><a href="https://yq.aliyun.com/articles/4216" target="_blank" rel="noopener">preload-classes的前世今生</a></p>
+<p><a href="https://github.com/google/guava#guava-google-core-libraries-for-java" target="_blank" rel="noopener">Guava: Google Core Libraries for Java</a></p>
+<p>Android Studio 中关联 JDK 源码<br>Project Structure - SDK Location - 把 JDK location 处 Use embedded JDK(recommended) 勾选去掉，然后替换为我们本地安装的 JDK 路径。</p>
+<p>Mac 查询 JDK 的安装路径<br>running /usr/libexec/java_home -version 1.8</p>
+<p>完美解决隐藏Listview和RecyclerView去掉滚动条和滑动到边界阴影的方案<br><a href="https://blog.csdn.net/ming2316780/article/details/51578621" target="_blank" rel="noopener">https://blog.csdn.net/ming2316780/article/details/51578621</a></p>
+<p><a href="https://blog.csdn.net/qq_20451879/article/details/79075272" target="_blank" rel="noopener">EditText光标颜色与下划线颜色的设</a></p>
+<p>EditText<br>设置输入法显示搜索按钮<br>android:inputType=”text”<br>android:imeOptions=”actionSearch”<br>android:inputType=”text” 会导致EditText 的输入为单行显示，如果需要多行显示内容，可以设置为 android:inputType=”textMultiLine”</p>
+<p>应用横竖屏旋转时，避免Activity被销毁，可以在清单中配置如下，注意要加上 screenSize 否则无效<br>android:configChanges=”orientation|keyboardHidden|screenLayout|screenSize”<br><a href="https://www.jianshu.com/p/dbc7e81aead2" target="_blank" rel="noopener">https://www.jianshu.com/p/dbc7e81aead2</a></p>
+<p>返回功能<br>@Override<br>public boolean onKeyDown(int keyCode, KeyEvent event) {<br>    if (keyCode == KeyEvent.KEYCODE_BACK &amp;&amp; event.getRepeatCount() == 0)<br>    {<br>        goBack();<br>        return false;<br>    }<br>    return super.onKeyDown(keyCode, event);<br>}</p>
+<p>禁止屏幕休眠<br>PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);<br>mWakeLock = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, TAG);<br>SCREEN_BRIGHT_WAKE_LOCK 在 android 4.1 is deprecated<br>view.setKeepScreenOn(true);<br>view.setKeepScreenOn(false);<br>两者的区别？<br>private PowerManager powerManager;<br>private PowerManager.WakeLock wakeLock;<br>private static final int WAKE_LOCK_TIMEOUT = 60000; //ms,这个超时时间应该大于语音识别时间<br>powerManager = ((PowerManager) context.getSystemService(POWER_SERVICE));<br>private void startWakeLock(){<br>    releaseWakeLock();<br>    wakeLock = powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK|PowerManager.ON_AFTER_RELEASE, “PostLocationService”);<br>    wakeLock.acquire(WAKE_LOCK_TIMEOUT);<br>    SimpleLog.d(TAG,”startWakeLock — “);<br>}</p>
+<p>private void releaseWakeLock(){<br>    SimpleLog.d(TAG,”releaseWakeLock wakeLock = “+wakeLock);<br>    if(wakeLock != null){<br>        if(wakeLock.isHeld()){<br>            wakeLock.release();<br>        }<br>        wakeLock = null;<br>    }</p>
+<p>Screen size<br>Method 1:<br>WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);<br>final DisplayMetrics displayMetrics = new DisplayMetrics();<br>wm.getDefaultDisplay().getMetrics(displayMetrics);<br>int height = displayMetrics.heightPixels;<br>int width = displayMetrics.widthPixels;</p>
+<p>Method 2<br>DisplayMetrics dm = getResources().getDisplayMetrics();<br>int densityDpi = dm.densityDpi;</p>
+<p>Android判断是否可以使用外网<br><a href="https://blog.csdn.net/z2464342708m/article/details/74638360" target="_blank" rel="noopener">https://blog.csdn.net/z2464342708m/article/details/74638360</a></p>
+<p>获取其他应用的 SharedPreferences 信息，注意 Context 不要使用本应用 Context 直接进行获取。<br>try {<br>    Context packageContext = mContext.createPackageContext(COURSE_PACKAGE_NAME,<br>            Context.CONTEXT_IGNORE_SECURITY);<br>    if(packageContext != null){<br>        SharedPreferences sp = packageContext.getSharedPreferences(kCourseP, getMutiProcessMode());<br>        result = sp.getBoolean(kCourseStatus, false);<br>        Log.d(NAME,”isCourseStatus 123”+result);</p>
+<pre><code>}
+</code></pre><p>} catch (PackageManager.NameNotFoundException e) {<br>    e.printStackTrace();<br>}</p>
 
       
     </div>
@@ -361,6 +379,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/23/Android-开发手册/" rel="prev" title="Android 开发手册">
+                Android 开发手册 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -412,8 +434,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -428,8 +459,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -456,6 +487,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#waiting-for-research"><span class="nav-number">1.</span> <span class="nav-text">waiting for research</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -479,7 +526,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
