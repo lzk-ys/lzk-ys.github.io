@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="内存泄漏的危害1、 引起OutOfMemoryError2、 内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序 场景：1、类的静态变量持有大数据对象静态变量长期维持到大数据对象的引用，阻止垃圾回收。 2、非静态内部类的静态实例非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持">
+<meta name="description" content="内存泄漏的危害1、引起OutOfMemoryError2、内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序 场景：1、类的静态变量持有大数据对象静态变量长期维持到大数据对象的引用，阻止垃圾回收。 2、非静态内部类的静态实例非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持着外">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 内存泄漏分析">
 <meta property="og:url" content="https://lzk-ys.github.io/2018/02/24/Android-内存泄漏分析/index.html">
 <meta property="og:site_name" content="Lucien">
-<meta property="og:description" content="内存泄漏的危害1、 引起OutOfMemoryError2、 内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序 场景：1、类的静态变量持有大数据对象静态变量长期维持到大数据对象的引用，阻止垃圾回收。 2、非静态内部类的静态实例非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持">
+<meta property="og:description" content="内存泄漏的危害1、引起OutOfMemoryError2、内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序 场景：1、类的静态变量持有大数据对象静态变量长期维持到大数据对象的引用，阻止垃圾回收。 2、非静态内部类的静态实例非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持着外">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-24T05:14:14.000Z">
+<meta property="og:updated_time" content="2018-11-01T10:53:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 内存泄漏分析">
-<meta name="twitter:description" content="内存泄漏的危害1、 引起OutOfMemoryError2、 内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序 场景：1、类的静态变量持有大数据对象静态变量长期维持到大数据对象的引用，阻止垃圾回收。 2、非静态内部类的静态实例非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持">
+<meta name="twitter:description" content="内存泄漏的危害1、引起OutOfMemoryError2、内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序 场景：1、类的静态变量持有大数据对象静态变量长期维持到大数据对象的引用，阻止垃圾回收。 2、非静态内部类的静态实例非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持着外">
 
 
 
@@ -352,7 +352,7 @@
       
 
       
-        <p>内存泄漏的危害<br>1、 引起OutOfMemoryError<br>2、 内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度<br>3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序</p>
+        <p>内存泄漏的危害<br>1、引起OutOfMemoryError<br>2、内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度<br>3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序</p>
 <p>场景：<br>1、<br>类的静态变量持有大数据对象<br>静态变量长期维持到大数据对象的引用，阻止垃圾回收。</p>
 <p>2、<br>非静态内部类的静态实例<br>非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持着外部类的引用，阻止被回收掉。</p>
 <p>非静态内部类和匿名内部类会持有外部类的引用，而静态内部类不会。</p>
@@ -469,7 +469,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
