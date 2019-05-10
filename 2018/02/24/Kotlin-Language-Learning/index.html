@@ -1,90 +1,187 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Kotlin Language Learning | Lucien</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="参考文献：Kotlin 教程Kotlin user ManualKotlin Standard LibraryGoogle 的 Kotlin 写的⽰例项⽬https://m.signalvnoise.com/how-we-made-basecamp-3s-android-app-100-kotlin-35e4e1c0ef12 Kotlin 和 Python 在语法上的区别Kotlin 的语句块使用">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Kotlin Language Learning">
-<meta property="og:url" content="https://lzk-ys.github.io/2018/02/24/Kotlin-Language-Learning/index.html">
-<meta property="og:site_name" content="Lucien">
-<meta property="og:description" content="参考文献：Kotlin 教程Kotlin user ManualKotlin Standard LibraryGoogle 的 Kotlin 写的⽰例项⽬https://m.signalvnoise.com/how-we-made-basecamp-3s-android-app-100-kotlin-35e4e1c0ef12 Kotlin 和 Python 在语法上的区别Kotlin 的语句块使用">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-24T05:16:17.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kotlin Language Learning">
-<meta name="twitter:description" content="参考文献：Kotlin 教程Kotlin user ManualKotlin Standard LibraryGoogle 的 Kotlin 写的⽰例项⽬https://m.signalvnoise.com/how-we-made-basecamp-3s-android-app-100-kotlin-35e4e1c0ef12 Kotlin 和 Python 在语法上的区别Kotlin 的语句块使用">
-  
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+<html lang="en">
 
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="Lucien" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        Kotlin Language Learning｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="https://lzk-ys.github.io/2018/02/24/Kotlin-Language-Learning/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Lucien</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">个人博客</a>
-        </h2>
-      
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    Lucien
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/categories/">categories</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
+                            <a href="/tags/">tags</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://lzk-ys.github.io"></form>
-      </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>Kotlin Language Learning</h1>
+                    
+                    <span class="meta">
+                         作者 Lucien Liu
+                        <span>
+                          日期 2018-02-24
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="post-title-haojen">
+        <span>
+            Kotlin Language Learning
+        </span>
+    </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-Kotlin-Language-Learning" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/02/24/Kotlin-Language-Learning/" class="article-date">
-  <time datetime="2018-02-24T02:35:20.000Z" itemprop="datePublished">2018-02-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Kotlin Language Learning
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>参考文献：<br><a href="http://www.runoob.com/kotlin/kotlin-interface.html" target="_blank" rel="noopener">Kotlin 教程</a><br><a href="https://kotlinlang.org/docs/reference/basic-syntax.html" target="_blank" rel="noopener">Kotlin user Manual</a><br><a href="https://kotlinlang.org/api/latest/jvm/stdlib/index.html" target="_blank" rel="noopener">Kotlin Standard Library</a><br><a href="https://developer.android.com/samples/?language=kotlin" target="_blank" rel="noopener">Google 的 Kotlin 写的⽰例项⽬</a><br><a href="https://m.signalvnoise.com/how-we-made-basecamp-3s-android-app-100-kotlin-35e4e1c0ef12" target="_blank" rel="noopener">https://m.signalvnoise.com/how-we-made-basecamp-3s-android-app-100-kotlin-35e4e1c0ef12</a></p>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>参考文献：<br><a href="http://www.runoob.com/kotlin/kotlin-interface.html" target="_blank" rel="noopener">Kotlin 教程</a><br><a href="https://kotlinlang.org/docs/reference/basic-syntax.html" target="_blank" rel="noopener">Kotlin user Manual</a><br><a href="https://kotlinlang.org/api/latest/jvm/stdlib/index.html" target="_blank" rel="noopener">Kotlin Standard Library</a><br><a href="https://developer.android.com/samples/?language=kotlin" target="_blank" rel="noopener">Google 的 Kotlin 写的⽰例项⽬</a><br><a href="https://m.signalvnoise.com/how-we-made-basecamp-3s-android-app-100-kotlin-35e4e1c0ef12" target="_blank" rel="noopener">https://m.signalvnoise.com/how-we-made-basecamp-3s-android-app-100-kotlin-35e4e1c0ef12</a></p>
 <p>Kotlin 和 Python 在语法上的区别<br>Kotlin 的语句块使用 {} 包裹，Python 的语句块使用缩进来构成</p>
 <p>Kotlin 和 Java 在语法上的区别<br>Kotlin 用 is 进行对象的类型判断，Java 用 instanceof 进行类型判断。且 Kotlin 在对应的对象语句块中不必做类型转换。<br>when - switch<br>允许函数嵌套，允许作为参数传递给其他⾼阶函数以及从其他⾼阶函数返回 - 不允许函数嵌套<br>当⼀个函数调⽤混⽤位置参数与命名参数时，所有位置参数都要放在第⼀个命名参数之前。例如，允许调⽤ f(1, y = 2) 但不允许 f(x = 1, 2) 。</p>
 <p>当函数返回单个表达式时，可以省略花括号并且在 = 符号之后指定代码体即可：<br>fun double(x: Int): Int = x <em> 2<br>当返回值类型可由编译器推断时，显式声明返回类型是可选的：<br>fun double(x: Int) = x </em> 2</p>
@@ -92,139 +189,168 @@
 <p>将 lambda 表达式传给最后⼀个参数<br>在 Kotlin 中有⼀个约定：如果函数的最后⼀个参数接受函数，那么作为相应参数传⼊的 lambda 表达式可以放在圆括号之外：<br>val product = items.fold(1) { acc, e -&gt; acc * e }<br>如果该 lambda 表达式是调⽤时唯⼀的参数，那么圆括号可以完全省略：<br>run { println(“…”) }</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br></pre></td><td class="code"><pre><span class="line">package hello</span><br><span class="line"></span><br><span class="line">// 分号可以省略  </span><br><span class="line">// 创建一个对象不用 new 关键字  </span><br><span class="line">// Kotlin 有函数字面量、局部函数和对象表达式。因此 Kotlin 的函数可以被嵌套。  </span><br><span class="line"></span><br><span class="line">class Greeter(val name: String)&#123;</span><br><span class="line">	fun greet()&#123;</span><br><span class="line">		println(&quot;Hello, $name&quot;)  // 分号可以省略</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">	Kotlin 中所有类都继承该 Any 类  </span><br><span class="line">	每个类只能有一个主构造器，但可以有多个次级构造器，次级构造器必须用 constructor 修饰符声明  </span><br><span class="line">	var 不允许用在次级构造器（secondary constructor）中   </span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">// 声明类名，是否可继承，主构造器</span><br><span class="line">open class Person(var name: String, var age: Int)&#123;</span><br><span class="line">	// 次级构造器</span><br><span class="line">	constructor(name: String, age: Int, birthday: String): this(name, age)&#123;</span><br><span class="line">		println(&quot; --- Person secondary constructor --- &quot;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Student(name: String, age: Int, var no: String, var score: Int): Person(name, age)&#123;</span><br><span class="line">	init&#123;</span><br><span class="line">		println(&quot; --- Student init --- &quot;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	override fun toString()&#123;</span><br><span class="line">		println(&quot;Student: name:$name, age:$age, no:$no, score:$score&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 子类没有主构造函数，必须在每一个二级构造函数中用 super 关键字初始化基类，或者在代理另一个构造函数。</span><br><span class="line">// 初始化基类时，可以调用基类的不同构造方法</span><br><span class="line">class Teacher: Person&#123;</span><br><span class="line"></span><br><span class="line">	init&#123;</span><br><span class="line">		println(&quot; --- Teacher init --- &quot;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// 次级构造器</span><br><span class="line">	constructor(name: String, age: Int, subject: String, grade: String): super(name, age)&#123;</span><br><span class="line">		println(&quot; --- Teacher secondary constructor -- &quot;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun main(args: Array&lt;String&gt;)&#123;</span><br><span class="line">	// 创建一个对象不用 new 关键字</span><br><span class="line">	Greeter(&quot;Lucien2&quot;).greet()  </span><br><span class="line"></span><br><span class="line">	Teacher(&quot;Lucien&quot;,30,&quot;语文&quot;, &quot;三年级&quot;)</span><br><span class="line">	Student(&quot;Tom&quot;, 10, &quot;10001&quot;, 89)</span><br><span class="line"></span><br><span class="line">	// 数组：两种创建方法</span><br><span class="line">	val a = arrayOf(1,2,3)</span><br><span class="line">	val b = Array(3, &#123;i -&gt; (i*2)&#125;)</span><br><span class="line">	// 迭代器遍历</span><br><span class="line">	for(i in a)&#123;</span><br><span class="line">		println(&quot;array -- $i&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	// 索引遍历</span><br><span class="line">	for(i in b.indices)&#123;</span><br><span class="line">		println(&quot;array index $i = $&#123;b[i]&#125;&quot;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// --- 条件控制 ---</span><br><span class="line">	// if expression</span><br><span class="line">	val maxVal = if(a[1]&gt;b[1]) a[1] else b[1]  //Kotlin中不需要像Java那种有一个三元操作符</span><br><span class="line">	println(&quot;maxVal = $maxVal&quot;)</span><br><span class="line"></span><br><span class="line">	// when expression</span><br><span class="line">	val operatorArr = arrayOf(&quot;add&quot;,&quot;subtract&quot;)</span><br><span class="line">	val ope = &quot;ddd&quot;</span><br><span class="line">	when(ope)&#123;</span><br><span class="line">		operatorArr[0] -&gt; println(&quot;1 $ope&quot;)</span><br><span class="line">		operatorArr[1] -&gt; println(&quot;2 $ope&quot;)</span><br><span class="line">		else -&gt; println(&quot;not support this operator&quot;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// --- 循环控制 ---</span><br><span class="line">	/*</span><br><span class="line">		for 循环</span><br><span class="line">		1. 对任何提供迭代器（iterator）的对象进行遍历</span><br><span class="line">		2. 通过索引遍历一个数组或者一个list</span><br><span class="line">		3. 用库函数 withIndex</span><br><span class="line">	*/</span><br><span class="line">	val items = listOf(&quot;apple&quot;,&quot;banana&quot;,&quot;kiwi&quot;)</span><br><span class="line">	// 迭代器遍历</span><br><span class="line">	for(item in items)&#123;</span><br><span class="line">		println(item)</span><br><span class="line">	&#125;</span><br><span class="line">	// 索引遍历</span><br><span class="line">	for(i in items.indices)&#123;</span><br><span class="line">		println(&quot;item at $i is $&#123;items[i]&#125;&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	// 用库函数 withIndex</span><br><span class="line">	for((index,value) in items.withIndex())&#123;</span><br><span class="line">		println(&quot;the element at $index is $value&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">  // 使⽤区间</span><br><span class="line">	for (i in 1..100) &#123; …… &#125; // 闭区间：包含 100</span><br><span class="line">	for (i in 1 until 100) &#123; …… &#125; // 半开区间：不包含 100</span><br><span class="line">	for (x in 2..10 step 2) &#123; …… &#125;</span><br><span class="line">	for (x in 10 downTo 1) &#123; …… &#125;</span><br><span class="line">	if (x in 1..10) &#123; …… &#125;</span><br><span class="line"></span><br><span class="line">	// while and do..while</span><br><span class="line">	println(&quot;while and do..while is same as java&quot;)</span><br><span class="line">	println(&quot; --- while 使用 --- &quot;)</span><br><span class="line">    var x = 5</span><br><span class="line">    while (x &gt; 0) &#123;</span><br><span class="line">        println( x--)</span><br><span class="line">    &#125;</span><br><span class="line">    println(&quot; --- do...while 使用 --- &quot;)</span><br><span class="line">    var y = 5</span><br><span class="line">    do &#123;</span><br><span class="line">        println(y--)</span><br><span class="line">    &#125; while(y&gt;0)</span><br><span class="line"></span><br><span class="line">	/*</span><br><span class="line">		返回和跳转，Kotlin 有三种结构化跳转表达式：</span><br><span class="line">		return，默认从最直接包围它的函数或者匿名函数返回。</span><br><span class="line">		break，终止最直接包围它的循环。</span><br><span class="line">		continue，继续下一次最直接包围它的循环。</span><br><span class="line">	*/</span><br><span class="line">	println(&quot; --- 返回和跳转 --- &quot;)</span><br><span class="line">	for (i in 1..10) &#123;</span><br><span class="line">        if (i==3) continue  // i 为 3 时跳过当前循环，继续下一次循环</span><br><span class="line">        println(i)</span><br><span class="line">        if (i&gt;5) break   // i 为 6 时 跳出循环</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	// Break 和 Continue 标签</span><br><span class="line">	// 在 Kotlin 中任何表达式都可以用标签（label）来标记。  </span><br><span class="line">	// 1.表达式前面的标签@在标签名后面，break和continue 后面的@在标签名前面且不能有空格</span><br><span class="line">	// 2.标签命名：数字不能开头</span><br><span class="line">	abc@ for(i in 1..10)&#123;</span><br><span class="line">		efg@ for(j in 1..5)&#123;</span><br><span class="line">			if(j == 3) continue@efg  //continue和@之间不能有空格</span><br><span class="line">			if(i == 5) break@abc     //break和@之间不能有空格</span><br><span class="line">			println(&quot;i = $i j = $j&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://lzk-ys.github.io/2018/02/24/Kotlin-Language-Learning/" data-id="cjvhtfusg000m09w92y6hzwrl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2018/02/24/Android-内存泄漏分析/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Android 内存泄漏分析
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/02/23/Hexo-NexT-Settings/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hexo NexT Settings</div>
-    </a>
-  
-</nav>
+                <hr>
+                
 
-  
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/02/24/Android-内存泄漏分析/" data-toggle="tooltip" data-placement="top"
+                           title="Android 内存泄漏分析">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/02/23/Hexo-NexT-Settings/" data-toggle="tooltip" data-placement="top"
+                           title="Hexo NexT Settings">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    <!-- Featured Tags -->
 
-  
-    <!-- Short About -->
-<section class="visible-md visible-lg">
-    <h5><a href="/about/">ABOUT ME</a></h5>
-    <div class="short-about">
 
-        
 
-        
 
-        <!-- SNS Link -->
-        <ul class="list-inline">
-            
-            
-            
 
-            
 
-            
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
 
-            
-            
-            
-            
-        </ul>
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Lucien 2019
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
     </div>
-</section>
-
-  
-    
-  <h5>RECENT POSTS</h3>
-  <div class="widget">
-    <ul>
-      
-        <li>
-          <a href="/2018/11/06/Back-Propagation-反向传播/">Back-Propagation-反向传播</a>
-        </li>
-      
-        <li>
-          <a href="/2018/10/31/Convolutional-neural-network/">Convolutional-neural-network</a>
-        </li>
-      
-        <li>
-          <a href="/2018/10/31/network-1/">network</a>
-        </li>
-      
-        <li>
-          <a href="/2018/10/31/network/">network</a>
-        </li>
-      
-        <li>
-          <a href="/2018/03/23/Android-开发手册/">Android 开发手册</a>
-        </li>
-      
-    </ul>
-  </div>
-
-  
-    <!-- Friends Blog -->
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">6</span></li></ul>
-    </div>
-  </div>
-
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 Lucien Liu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-</nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://lzk-ys.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
 
 
 
-<script src="/js/script.js"></script>
+<!-- Google Analytics -->
 
-  </div>
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
 </body>
+
 </html>
