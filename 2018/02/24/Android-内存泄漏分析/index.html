@@ -82,11 +82,11 @@
 <meta name="description" content="内存泄漏的危害1、引起OutOfMemoryError2、内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序 场景：1、类的静态变量持有大数据对象静态变量长期维持到大数据对象的引用，阻止垃圾回收。 2、非静态内部类的静态实例非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持着外">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 内存泄漏分析">
-<meta property="og:url" content="https://lzk-ys.github.io/2018/02/24/Android-内存泄漏分析/index.html">
+<meta property="og:url" content="https://www.lucien.tech/2018/02/24/Android-内存泄漏分析/index.html">
 <meta property="og:site_name" content="Lucien">
 <meta property="og:description" content="内存泄漏的危害1、引起OutOfMemoryError2、内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序 场景：1、类的静态变量持有大数据对象静态变量长期维持到大数据对象的引用，阻止垃圾回收。 2、非静态内部类的静态实例非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持着外">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-01T10:53:02.000Z">
+<meta property="og:updated_time" content="2018-11-15T10:47:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 内存泄漏分析">
 <meta name="twitter:description" content="内存泄漏的危害1、引起OutOfMemoryError2、内存占用高时JVM虚拟机会频繁触发GC, 影响程序响应速度3、内存占用大的程序容易被各种清理优化程序中止，用户也更倾向于卸载这些程序 场景：1、类的静态变量持有大数据对象静态变量长期维持到大数据对象的引用，阻止垃圾回收。 2、非静态内部类的静态实例非静态内部类会维持一个到外部类实例的引用，如果非静态内部类的实例是静态的，就会间接长期维持着外">
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="https://lzk-ys.github.io/2018/02/24/Android-内存泄漏分析/"/>
+  <link rel="canonical" href="https://www.lucien.tech/2018/02/24/Android-内存泄漏分析/"/>
 
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lzk-ys.github.io/2018/02/24/Android-内存泄漏分析/">
+    <link itemprop="mainEntityOfPage" href="https://www.lucien.tech/2018/02/24/Android-内存泄漏分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lucien Liu">
@@ -365,6 +365,7 @@
 <p>预防：<br>不要维持到 Activity 的长久引用，对 activity 的引用应该和 activity 本身有相同的生命周期。<br>尽量使用context-application代替context-activity<br>Activity 中尽量不要使用非静态内部类，可以使用静态内部类和WeakReference代替。</p>
 <p>检测：<br>静态检测<br>　　静态检测主要是检测资源未关闭的情况，Eclipse 和 Android Studio 都可以检测出 IO 或者 Socket 未关闭的情况，然后在 finally 中关闭即可。<br>动态监测<br>　　动态检测主要是依靠 MAT(Memory Analysis Tools) 这个工具。目前主流：LeakCanary<br>具体：<a href="http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&amp;mid=401667209&amp;idx=2&amp;sn=f1a085f8838e59de55927d71260ec83c&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&amp;mid=401667209&amp;idx=2&amp;sn=f1a085f8838e59de55927d71260ec83c&amp;scene=21#wechat_redirect</a></p>
 <p>参考资料：<br>Android内存泄漏研究<br><a href="http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&amp;mid=2649547478&amp;idx=1&amp;sn=fec54d62785a6f666ef9c49646871ba9&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&amp;mid=2649547478&amp;idx=1&amp;sn=fec54d62785a6f666ef9c49646871ba9&amp;scene=21#wechat_redirect</a></p>
+<p>内存使用分析<br>Android 系统为每个应用分配一个固定大小的内存</p>
 
       
     </div>
@@ -528,7 +529,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
